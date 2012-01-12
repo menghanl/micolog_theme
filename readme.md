@@ -3,16 +3,16 @@ Theme for Micolog
 
 my theme for micolog, a simple one
 
-base.html	Ö÷Ä£°å¼ş
-category.html	Ä¿Â¼
-comments.html	ÆÀÂÛ
-error-101.html	ÓÃ»§×Ô¶¨Òå´íÎóÒ³Ãæ
-error-102.html	ÓÃ»§×Ô¶¨Òå´íÎóÒ³Ãæ
-error.html	´íÎóÒ³Ãæ
-error404.html	404´íÎóÒ³Ãæ
-index.html	Ê×Ò³
-month.html	¹éµµÒ³Ãæ
-page.html	PageÒ³Ãæ
-sidebar.html	²à±ßÀ¸
-single.html	ÕÂÒ³Ãæ
-tag.html	±êÇ©Ò³Ãæ
+base.html	ä¸»æ¨¡æ¿ä»¶
+category.html	ç›®å½•
+comments.html	è¯„è®º
+error-101.html	ç”¨æˆ·è‡ªå®šä¹‰é”™è¯¯é¡µé¢
+error-102.html	ç”¨æˆ·è‡ªå®šä¹‰é”™è¯¯é¡µé¢
+error.html	é”™è¯¯é¡µé¢
+error404.html	404é”™è¯¯é¡µé¢
+index.html	é¦–é¡µ
+month.html	å½’æ¡£é¡µé¢
+page.html	Pageé¡µé¢
+sidebar.html	ä¾§è¾¹æ 
+single.html	ç« é¡µé¢
+tag.html	æ ‡ç­¾é¡µ
