@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%block content%}
+{%if entries%}
+
+{% for entry in entries %}
+{{entry.key}} 文章Key 
+{{entry.key.id}} 文章ID 
+{{entry.title}} 文章标题 
+{{entry.author}} 文章作者 
+/{{ entry.link }} 文章URL 
+{{entry.edit_url}} 文章编辑地址 
+{{entry.date|datetz:"F jS, Y"}} 文章时间（具体参数可以参照php语言的时间格式化） 
+{{entry.content_excerpt}} 文章简介 
+{{entry.commentcount}} 评论数量 
+{% if entry.strtags %}Tags: {%for tag in entry.tags%}{{tag}} {%endfor%}{%endif%} 文章tags循环（附加判断是否有tags） 
+{%endfor%}
+
+{%else%}
+<p> not found </p>
+
+{%endif%}
+{%endblock%}
