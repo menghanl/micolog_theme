@@ -2,28 +2,43 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8;" />
 	<title>{%block title%}{{blog.title}}{%endblock%}</title>
-	<link rel="stylesheet" href="/theme/{{blog.theme_name}}/style.css" type="text/css" media="screen" />
+
+	<!--link rel="stylesheet" href="/themes/{{blog.theme_name}}/style.css" type="text/css" media="screen" /-->
+	<link media="screen, projection" type="text/css" href="/themes/{{blog.theme_name}}/screen.css" rel="stylesheet">
+	<link media="print" type="text/css" href="/themes/{{blog.theme_name}}/print.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="/themes/{{blog.theme_name}}/prettify.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="/themes/{{blog.theme_name}}/prettify.js"></script> 
+
 	<link rel="alternate" type="application/rss+xml" title="{{blog.title}} RSS Feed" href="{{blog.feedurl}}" />
 	<link href="/static/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest" />
+
 	{%block head_block%}{%endblock%}
 </head>
-<body>
-{{ blog.title}}: 博客标题 
-{{ blog.subtitle}} 博客副标题
-{{ blog.feedurl }} RSS地址 
-/static/wlwmanifest.xml Windows Live Writer编辑器配置文件
-{{ blog.theme_name }} 当前主题名称 
-{{blog.baseurl}} 根域名 
-{{self.m_list_pages}} 自定义页面列表 
-{{self.logouturl}} 用户退出 
-{{ blog.author }} blog作者 
-{{ self.login_user.email }} 当前用户email 
-{{ self.login_user.nickname }} 当前用户名
-{%if ishome%}current_page_item{%else%}page_item{%endif%} 判断是否当前页为首页（若为首页则显示current_page_item，否则page_item） 
-{{self.m_list_pages}} 页面列表 (page页面列表)
-{% block topmenu %}{% endblock %} 顶部菜单（生成） 
-{%if self.is_admin%}{%endif%} 判断是否是admin 
-{%if self.is_login%}{%endif%} 判断是否是登录用户
-{%block content %}{%endblock%} 通用页面中间内容部分
+<body onload="prettyPrint()">
+<div class="container"> 
+<div class="span-8">
+	<h1>{{ blog.title}}</h1>
+	<h2>{{ blog.subtitle}}</h2>
+	<a href="{{ blog.baseurl }}">HOME</a>
+	{{self.m_list_pages}}
+	{% block topmenu %}{% endblock %}
+	<a href="{{ blog.feedurl }}">RSS</a>
+	<hr>
+<ol>
+{% for entry in entries %}
+	<li>
+	<a href="/{{entry.link}}">{{entry.title}}</a>
+	{{entry.date|datetz:"F jS, Y"}}
+{%endfor%}
+</ol>
+</div>
+
+
+<div class="span-17 last">
+{%block content %}{%endblock%}
+</div>
+
+</div>
 </body>
 </html>
