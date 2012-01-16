@@ -32,6 +32,9 @@
 	{{entry.date|datetz:"F jS, Y"}}
 {%endfor%}
 </ol>
+{% if show_next %}<a href="/page/{{ pageindex|add:"1" }}">&laquo; Older Entries</a>{%endif%}
+<br>
+{% if show_prev %}<a href="/page/{{ pageindex|add:"-1" }}">&laquo; Newer Entries</a>{%endif%}
 </div>
 
 
