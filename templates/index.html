@@ -2,18 +2,16 @@
 {%block content%}
 {%if entries%}
 
-<ol>
 {% for entry in entries %}
-<div class="box">
-	<li>
-	<h3><a href="/{{entry.link}}">{{entry.title}}</a></h3>
-	<h6>{{entry.date|datetz:"F jS, Y"}}</h6>
-	<p>{{entry.content_excerpt}}</p>
-	<p>comments: {{entry.commentcount}}
-	{% if entry.strtags %} | Tags: {%for tag in entry.tags%}{{tag}} {%endfor%}{%endif%} </p>
+<div class="span-17 box entry">
+	<div class="entry_title"><a href="/{{entry.link}}">{{entry.title}}</a>
+		<div class="right">{{entry.date|datetz:"F jS, Y"}}</div>
+	</div>
+	<div class="entry_body">{{entry.content_excerpt}}</div>
+	<!--div class="meta">comments: {{entry.commentcount}}
+	{% if entry.strtags %} | Tags: {%for tag in entry.tags%}{{tag}} {%endfor%}{%endif%} </div-->
 </div>
 {%endfor%}
-</ol>
 
 {%else%}
 <p> not found </p>
